@@ -30,15 +30,15 @@ public class UsuarioConn {
     }
 
     public void registerUser(Usuario objuserDTO){
-        String sql = "insert into usuario (user, senha, cpf, endereco) values (?, ?, ?, ?)";
+        String sql = "insert into usuario (user, senha, endereco, cpf ) values (?, ?, ?, ?)";
         conn = new ConexaoDAO().conectaBD();
 
         try {
             pstm = conn.prepareStatement(sql);
             pstm.setString(1, objuserDTO.getUser());
             pstm.setString(2, objuserDTO.getSenha());
-            pstm.setString(3, objuserDTO.getSenha());
-            pstm.setString(4, objuserDTO.getSenha());
+            pstm.setString(3, objuserDTO.getEndereco());
+            pstm.setString(4, objuserDTO.getCpf());
 
             pstm.execute();
             pstm.close();

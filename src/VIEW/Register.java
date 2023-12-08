@@ -20,8 +20,8 @@ public class Register {
         tela.setLayout(null);
 
 //        ImageIcon icon = new ImageIcon("C:\\Users\\37076111837\\Desktop\\java-studies\\Delivery\\src\\Imagens\\fundo.png");
-//        ImageIcon icon = new ImageIcon("C:\\Users\\ct67ca\\Desktop\\java-studies\\Delivery\\src\\VIEW\\Imagens\\fundo.png");
-        ImageIcon icon = new ImageIcon("C:\\Users\\giihf\\Desktop\\java-studies\\Delivery\\src\\VIEW\\Imagens\\fundo.png");
+        ImageIcon icon = new ImageIcon("C:\\Users\\ct67ca\\Desktop\\java-exercises\\src\\VIEW\\Imagens\\fundo.png");
+//        ImageIcon icon = new ImageIcon("C:\\Users\\giihf\\Desktop\\java-studies\\Delivery\\src\\VIEW\\Imagens\\fundo.png");
         JLabel label = new JLabel(icon);
         label.setBounds(0,0, 800, 473);
         label.setLayout(null);
@@ -45,8 +45,8 @@ public class Register {
         panel.add(panelInput);
 
 //        ImageIcon imagem = new ImageIcon("C:\\Users\\37076111837\\Desktop\\java-studies\\Delivery\\src\\Imagens\\coffe.jpg");
-//        ImageIcon imagem = new ImageIcon("C:\\Users\\ct67ca\\Desktop\\java-studies\\Delivery\\src\\VIEW\\Imagens\\register.jpg");
-        ImageIcon imagem = new ImageIcon("C:\\Users\\giihf\\Desktop\\java-studies\\Delivery\\src\\VIEW\\Imagens\\register.jpg");
+        ImageIcon imagem = new ImageIcon("C:\\Users\\ct67ca\\Desktop\\java-exercises\\src\\VIEW\\Imagens\\register.jpg");
+//        ImageIcon imagem = new ImageIcon("C:\\Users\\giihf\\Desktop\\java-studies\\Delivery\\src\\VIEW\\Imagens\\register.jpg");
         JLabel img = new JLabel(imagem);
         img.setBounds(0,-20, 280, 380);
         img.setLayout(null);
@@ -68,7 +68,7 @@ public class Register {
         panelInput.add(titleUser);
 
         JTextField inputUser = new JTextField();
-        inputUser.setBounds(50, 95, 170, 30);
+        inputUser.setBounds(50, 95, 170, 25);
         inputUser.setForeground(Color.black);
         inputUser.setBorder(new LineBorder(Color.white, 2));
         inputUser.setLayout(null);
@@ -82,7 +82,7 @@ public class Register {
         panelInput.add(titlePassword);
 
         JPasswordField inputPassword = new JPasswordField();
-        inputPassword.setBounds(50, 150, 170, 30);
+        inputPassword.setBounds(50, 150, 170, 25);
         inputPassword.setForeground(Color.black);
         inputPassword.setLayout(null);
         inputPassword.setBorder(new LineBorder(Color.white, 2));
@@ -96,7 +96,7 @@ public class Register {
         panelInput.add(titleCPF);
 
         JTextField inputCPF = new JTextField();
-        inputCPF.setBounds(50, 210, 170, 30);
+        inputCPF.setBounds(50, 210, 170, 25);
         inputCPF.setForeground(Color.black);
         inputCPF.setLayout(null);
         inputCPF.setBorder(new LineBorder(Color.white, 2));
@@ -138,17 +138,22 @@ public class Register {
         btn.setBackground(cor);
         btn.addActionListener(e ->{
 
-            String user, senha, cpfUser;
+            String user, senha, cpfUser, enderecoX, enderecoY;
 
             user = inputUser.getText();
             senha = new String (inputPassword.getPassword());
             cpfUser = inputCPF.getText();
+            enderecoX = inputX.getText();
+            enderecoY = inputY.getText();
+
+            String enderecoCompleto = enderecoX + enderecoY;
 
             Usuario objusuario = new Usuario();
 
             objusuario.setUser(user);
             objusuario.setSenha(senha);
-            objusuario.setSenha(cpfUser);
+            objusuario.setEndereco(enderecoCompleto);
+            objusuario.setCpf(cpfUser);
 
             UsuarioConn userCon = new UsuarioConn();
             userCon.registerUser(objusuario);

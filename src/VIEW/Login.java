@@ -3,6 +3,8 @@ package VIEW;
 import DTO.Usuario;
 import connectionDB.UsuarioConn;
 
+import VIEW.telaprincipal.Home;
+
 import javax.swing.*;
 import javax.swing.border.LineBorder;
 import java.awt.*;
@@ -20,8 +22,7 @@ public class Login {
         tela.setLocation(300, 250);
         tela.setLayout(null);
 
-//        ImageIcon icon = new ImageIcon("C:\\Users\\37076111837\\Desktop\\java-studies\\Delivery\\src\\Imagens\\fundo.png");
-        ImageIcon icon = new ImageIcon("C:\\Users\\ct67ca\\Desktop\\java-studies\\Delivery\\src\\VIEW\\Imagens\\fundo.png");
+        ImageIcon icon = new ImageIcon("C:\\Users\\ct67ca\\Desktop\\java-exercises\\src\\VIEW\\Imagens\\fundo.png");
         JLabel label = new JLabel(icon);
         label.setBounds(0,0, 800, 473);
         label.setLayout(null);
@@ -44,8 +45,7 @@ public class Login {
         panelInput.setBounds(280,0,280,380);
         panel.add(panelInput);
 
-//        ImageIcon imagem = new ImageIcon("C:\\Users\\37076111837\\Desktop\\java-studies\\Delivery\\src\\Imagens\\coffe.jpg");
-        ImageIcon imagem = new ImageIcon("C:\\Users\\ct67ca\\Desktop\\java-studies\\Delivery\\src\\VIEW\\Imagens\\coffe.jpg");
+        ImageIcon imagem = new ImageIcon("C:\\Users\\ct67ca\\Desktop\\java-exercises\\src\\VIEW\\Imagens\\coffe.jpg");
         JLabel img = new JLabel(imagem);
         img.setBounds(0,-20, 280, 380);
         img.setLayout(null);
@@ -111,8 +111,8 @@ public class Login {
                 //sempre que for mostrar algo do banco o tipo da variavel é ResulSet
 
                 if (rsusuarioConn.next()) {
-                    Produtos telaProduto = new Produtos();
-
+                    Home princial = new Home();
+                    princial.setVisible(true);
                     tela.setVisible(false);
                 }else {
                     JOptionPane.showMessageDialog(null, "Usuario ou senha inválido");

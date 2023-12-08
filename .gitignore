@@ -1,0 +1,8 @@
+# Ignorar pasta out
+out/
+
+# Ignorar arquivos .iml
+*.iml
+
+# Ignorar pasta .idea
+.idea/
